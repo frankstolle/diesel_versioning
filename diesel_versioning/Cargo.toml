@@ -17,7 +17,7 @@ default = []
 async = ["diesel-async", "diesel_versioning_derives/async"]
 
 [dependencies]
-diesel_versioning_derives = { path = "../diesel_versioning_derives/", default-features = false }
+diesel_versioning_derives = { version="0.1.0", path = "../diesel_versioning_derives/", default-features = false }
 diesel = { version = "2.2.10" }
 diesel-async = { version = "0.5.2", optional = true }
 

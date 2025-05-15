@@ -8,7 +8,6 @@ use syn::{
     token::{Comma, Eq},
 };
 
-#[derive(Debug)]
 pub enum StructAttr {
     TableName(Path),
     CheckForBackend(syn::punctuated::Punctuated<TypePath, syn::Token![,]>),
