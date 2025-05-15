@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["diesel_versioning", "diesel_versioning_derives", "tests"]
+
+[workspace.package]
+edition = "2024"

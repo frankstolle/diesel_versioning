@@ -1,0 +1,32 @@
+[package]
+name = "diesel_versioning_async_example"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+authors = ["Frank Stolle <frank@stolle.email>"]
+edition.workspace = true
+publish = false
+
+[features]
+default = ["sync"]
+async = ["diesel-async", "diesel_versioning/async", "tokio", "testcontainers"]
+sync = ["diesel_versioning", "testcontainers/blocking"]
+
+[dependencies]
+diesel = { version = "2.2.10", features = [
+    "postgres",
+    "sqlite",
+    "returning_clauses_for_sqlite_3_35",
+] }
+diesel-async = { version = "0.5.2", optional = true, features = [
+    "sqlite",
+    "postgres",
+] }
+diesel_versioning = { path = "../diesel_versioning/", optional = true }
+log = "0.4.27"
+tokio = { version = "1.45.0", features = ["full"], optional = true }
+testcontainers = { version = "0.24.0", optional = true }
+
+[dev-dependencies]
+rstest = "0.25.0"
+env_logger = "0.11.8"
+diesel_migrations = { version = "2.2.0" }

@@ -1,0 +1,25 @@
+[package]
+name = "diesel_versioning"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+authors = ["Frank Stolle <frank@stolle.email>"]
+description = "Optimistic locking for diesel.rs"
+readme = "README.md"
+documentation = "https://docs.rs/diesel_versioning"
+homepage = "https://github.com/frankstolle/diesel_versioning"
+repository = "https://github.com/frankstolle/diesel_versioning"
+keywords = ["database", "sql", "diesel", "optimistic locking", "versioning"]
+categories = ["database"]
+edition.workspace = true
+
+[features]
+default = []
+async = ["diesel-async", "diesel_versioning_derives/async"]
+
+[dependencies]
+diesel_versioning_derives = { path = "../diesel_versioning_derives/", default-features = false }
+diesel = { version = "2.2.10" }
+diesel-async = { version = "0.5.2", optional = true }
+
+[package.metadata.docs.rs]
+all-features = true
