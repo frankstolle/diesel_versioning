@@ -8,7 +8,7 @@ readme = "README.md"
 documentation = "https://docs.rs/diesel_versioning"
 homepage = "https://github.com/frankstolle/diesel_versioning"
 repository = "https://github.com/frankstolle/diesel_versioning"
-keywords = ["database", "sql", "diesel", "optimistic locking", "versioning"]
+keywords = ["database", "sql", "diesel", "versioning"]
 categories = ["database"]
 edition.workspace = true
 
